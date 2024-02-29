@@ -1,0 +1,95 @@
+
+<!-- table-user.component.html -->
+
+<style>
+  .table-container {
+    margin: 20px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  button {
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .go-back-button {
+    background-color: #007bff; /* لون الخلفية */
+    color: #fff; /* لون النص */
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .go-back-button:hover {
+    background-color: #0056b3; /* لون الخلفية عند التحويم */
+  }
+</style>
+
+<button (click)="goBack()" class="go-back-button">
+  <span>&larr; Return to previous page</span>
+</button>
+
+<!-- Add a search input and button -->
+
+<div>
+  <label for="search-teacher">Search by Teacher Name:</label>
+  <input type="text" id="search-teacher" [(ngModel)]="searchTextTeacher" />
+  <button (click)="searchTeacher()">Search Teacher</button>
+</div>
+
+
+<div>
+  <label for="search-student">Search by Student Name:</label>
+  <input type="text" id="search-student" [(ngModel)]="searchTextStudent" />
+  <button (click)="searchStudent()">Search Student</button>
+</div>
+
+
+
+<table>
+  <thead>
+  <tr>
+    <th>Full Name Teacher</th>
+    <th>Full Name Student</th>
+    <th>Mark</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let exam of filteredExams.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)">
+    <td>{{ exam.course.teacher.teacher.fullName }}</td>
+
+    <td>{{ exam.student.student.fullName }}</td>
+
+    <td>{{ exam.mark }}</td>
+  </tr>
+  </tbody>
+</table>
+
+<!-- Pagination controls -->
+<div class="pagination">
+  <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+  <span>Page {{ currentPage }} of {{ totalPages }}</span>
+  <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+</div>

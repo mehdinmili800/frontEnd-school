@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .login-container {
+      max-width: 400px;
+      margin: 50px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 10px; /* Adjusted margin for better spacing */
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input,
+    select {
+      width: calc(100% - 16px); /* Adjusted width to accommodate margins */
+      padding: 8px;
+      box-sizing: border-box;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px; /* Added margin to separate button from last input */
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    /* Additional styles for column layout */
+    .form-group {
+      width: 48%; /* Adjusted width for two-column layout */
+      display: inline-block;
+      margin-right: 2%; /* Adjusted margin for spacing between columns */
+    }
+
+    @media (max-width: 600px) {
+      .form-group {
+        width: 100%; /* Full width for smaller screens */
+        margin-right: 0; /* No margin on smaller screens */
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="login-container">
+  <h2>Login</h2>
+  <form (ngSubmit)="createProfileStudent()">
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" [(ngModel)]="username" disabled>
+    </div>
+    <div class="form-group">
+      <label for="dateOfBirth">dateOfBirth:</label>
+      <input type="text" id="dateOfBirth" name="email" [(ngModel)]="dateOfBirth" required>
+    </div>
+    <div class="form-group">
+      <label for="address">address:</label>
+      <input type="text" id="address" name="phone" [(ngModel)]="address" required>
+    </div>
+    <div class="form-group">
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" [(ngModel)]="gender" required>
+        <option value="MALE">MALE</option>
+        <option value="FEMALE">FEMALE</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="educationId">educationId:</label>
+      <input type="text" id="educationId" name="phone" [(ngModel)]="educationId" required>
+    </div>
+    <div class="form-group">
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" name="fullName" [(ngModel)]="fullName" required>
+    </div>
+    <div class="form-group">
+      <label for="parent1Name">parent1Name:</label>
+      <input type="text" id="parent1Name" name="phone" [(ngModel)]="parent1Name" required>
+    </div>
+    <div class="form-group">
+      <label for="parent2Name">parent2Name:</label>
+      <input type="text" id="parent2Name" name="phone" [(ngModel)]="parent2Name" required>
+    </div>
+    <div class="form-group">
+      <label for="parent1Phone">parent1Phone:</label>
+      <input type="text" id="parent1Phone" name="phone" [(ngModel)]="parent1Phone" required>
+    </div>
+    <div class="form-group">
+      <label for="parent2Phone">parent2Phone:</label>
+      <input type="text" id="parent2Phone" name="phone" [(ngModel)]="parent2Phone" required>
+    </div>
+
+    <button type="submit">Create Profile</button>
+  </form>
+</div>
+</body>
+</html>

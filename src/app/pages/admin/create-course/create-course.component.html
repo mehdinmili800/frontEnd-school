@@ -1,0 +1,83 @@
+<!-- create-course.component.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Course</title>
+  <style>
+    div {
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    div label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    div input,
+    div select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+
+    div button {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    div button:hover {
+      background-color: #45a049;
+    }
+
+    .go-back-button {
+      background-color: #007bff; /* لون الخلفية */
+      color: #fff; /* لون النص */
+      border: none;
+      padding: 8px 16px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .go-back-button:hover {
+      background-color: #0056b3; /* لون الخلفية عند التحويم */
+    }
+  </style>
+</head>
+<body>
+<button (click)="goBack()" class="go-back-button">
+  <span>&larr; Return to previous page</span>
+</button>
+
+<div>
+  <div>
+    <label>Title:</label>
+    <input [(ngModel)]="course.title" placeholder="Course Title">
+  </div>
+  <div>
+    <label>Year:</label>
+    <input type="number" [(ngModel)]="course.year" placeholder="Course Year">
+  </div>
+  <div>
+    <label>Teacher:</label>
+    <select [(ngModel)]="course.teacher_id">
+      <option *ngFor="let teacher of teachers" [value]="teacher.id">{{ teacher.teacher.username }}</option>
+    </select>
+  </div>
+  <button (click)="createCourse()">Create Course</button>
+</div>
+
+</body>
+</html>

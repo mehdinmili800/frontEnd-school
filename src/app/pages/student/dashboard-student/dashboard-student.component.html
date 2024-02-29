@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Student Dashboard</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Include Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    #sidebar {
+      width: 250px;
+      background-color: #333;
+      padding-top: 20px;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    #sidebar a {
+      padding: 10px;
+      text-decoration: none;
+      color: #fff;
+      display: block;
+      transition: background 0.3s;
+    }
+
+    #sidebar a:hover {
+      background: #555;
+    }
+
+    #content {
+      flex: 1;
+      padding: 20px;
+    }
+
+    /* Additional styles for a professional look */
+    #sidebar h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #sidebar .list-group-item {
+      background-color: #333;
+      color: #fff;
+      border: none;
+    }
+
+    #sidebar .list-group-item:hover {
+      background: #555;
+    }
+
+  </style>
+</head>
+<body>
+<div id="sidebar">
+  <h2>Student Dashboard</h2>
+  <div class="list-group">
+    <a href="/table-teacher" class="list-group-item list-group-item-action"><mat-icon>assignment_ind</mat-icon>The Teachers Courses</a>
+    <a href="/results-exams" class="list-group-item list-group-item-action teacher-section"><mat-icon> list_alt</mat-icon>Results Exams</a>
+    <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-cog"></i> Settings</a>
+
+    <a href="#" class="list-group-item list-group-item-action" (click)="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+  </div>
+</div>
+
+<div id="content">
+  <!-- Your dashboard content goes here -->
+  <h1>Welcome to the Student Dashboard</h1>
+  <p>This is where you can manage your student tasks.</p>
+
+  <img src="assets/smiling-students-with-backpacks_1098-1220.avif" alt="Your Image Description" style="display: block; margin: 0 auto; width: 1000px; height: 600px;">
+
+</div>
+
+<!-- Include Bootstrap JS and Popper.js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
